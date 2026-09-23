@@ -1,0 +1,12 @@
+# The workloads from spec/13-benchmarks.md in the kime repository. One row per workload, tab
+# separated. The generated inputs for each one land under workloads/<id>/ as the harness grows.
+id	description	state	questions
+W1	Single decision on a short message	96 tokens, an email body	1 choice, 4 options
+W2	Support ticket triage (Laya triage preset)	300 tokens	5 mixed: 1 choice of 6, 2 score, 2 noul
+W3	Ten questions over a document	512 tokens	10 mixed
+W4	Fifty questions	512 tokens	50 mixed
+W5	Browser agent step (jev-ultrafast format)	about 5.3k tokens: page text and an element table	operation choice of 8, plus 3 target heads of up to 250 options
+W6	Long context	1,024, 8,192 and 32,768 tokens	3 mixed
+W7	Multilingual	200 tokens in each of the 51 MASSIVE languages	1 choice of 20
+W8	Agent loop	17 consecutive W5 steps from the recorded Google Flights trace	as W5
+W9	Throughput	W2 at saturation with 64 concurrent clients	as W2

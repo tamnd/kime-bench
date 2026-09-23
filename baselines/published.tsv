@@ -1,0 +1,22 @@
+# The speed and cost rows from spec/13-benchmarks.md: the best published or measured baseline for
+# each row, and where the number comes from. A row without a source is not a baseline. Rows the
+# spec says are measured on the day have no number here, because the number is whatever the
+# baseline does in the same session as kime.
+#
+# lower is better for ms, J and usd; higher is better for qps. The target is one tenth or ten times.
+row	workload	hardware	baseline	value	unit	source
+w1-t4	W1	T4	laya-multilingual	32.8	ms	Laya 0.3.7 published T4 numbers, kime spec/02-prior-art.md
+w1-l4	W1	L4	laya	-	ms	measured on the day
+w1-http-l4	W1	L4	jev (hosted)	111	ms	TypeSafe consistency cookbooks, 111 to 114 ms per call
+w3-t4	W3	T4	laya-multilingual	7.2	ms	Laya 0.3.7 published T4 numbers, 72.3 ms for 10 questions
+w4-t4	W4	T4	laya-multilingual	337.4	ms	Laya 0.3.7 published T4 numbers, 50 questions
+w2-l4	W2	L4	jev (hosted)	270	ms	TypeSafe cookbook, 13 questions over a 53,777 character article
+w5-l4	W5	L4	jev (hosted)	178	ms	jev-ultrafast flights-measurement.json, median
+w8-l4	W8	L4	jev (hosted)	219	ms	jev-ultrafast flights-measurement.json, 3,720 ms over 17 steps
+w1-m3max-gpu	W1	M3 Max	laya-mlx multilingual	7.39	ms	laya-mlx published numbers
+w1-m3max-ane	W1	M3 Max	laya-coreml W8	4.88	ms	laya-coreml published numbers, ANE rewrite at B1/L96
+energy-m3max	W1	M3 Max	laya-coreml W8	0.1344	J	laya-coreml published numbers, ANE rewrite at B1/L96
+batch-m3max	W1	M3 Max	laya-mlx	395	qps	laya-mlx published numbers, batched
+w1-6900hx	W1	Ryzen 9 6900HX	laya	329	ms	Laya 0.3.7 published numbers, tuned threads (329 to 783 ms)
+w9-l4	W9	L4	laya	-	qps	measured on the day
+cost-l4	W9	L4	jev (hosted)	0.042	usd	Jev list price, $0.042 per million input tokens

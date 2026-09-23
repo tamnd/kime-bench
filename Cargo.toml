@@ -1,0 +1,29 @@
+# Not published. This is a harness that drives other people's engines, and nobody should depend
+# on it from a build.
+[package]
+name = "kime-bench"
+version = "0.0.1"
+edition = "2024"
+rust-version = "1.90.0"
+license = "Apache-2.0"
+repository = "https://github.com/tamnd/kime-bench"
+description = "The benchmark harness for kime."
+publish = false
+
+[dependencies]
+
+[lints.rust]
+missing_debug_implementations = "warn"
+rust_2018_idioms = "warn"
+unreachable_pub = "warn"
+unused_qualifications = "warn"
+
+[lints.clippy]
+undocumented_unsafe_blocks = "warn"
+doc_markdown = "allow"
+missing_panics_doc = "warn"
+todo = "warn"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

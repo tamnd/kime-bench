@@ -1,0 +1,7 @@
+/target
+/runs
+*.parquet
+!reports/**/*.parquet
+.venv/
+__pycache__/
+.DS_Store
