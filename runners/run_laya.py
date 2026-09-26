@@ -1,7 +1,7 @@
 """Times Laya in process on a workload's requests, one call at a time, with the columns that
 `kime-bench run` writes, so `kime-bench summary` reads both.
 
-    python runners/laya.py <requests.jsonl> <laya model dir> [--device cuda|mps|cpu] [--half]
+    python runners/run_laya.py <requests.jsonl> <laya model dir> [--device cuda|mps|cpu] [--half]
         [--compile] [--threads N] [--warmup 200] [--calls 2000] [--out calls.tsv]
 
 `--half` runs the model under fp16 autocast on cuda and mps, and `--compile` passes compile=True
