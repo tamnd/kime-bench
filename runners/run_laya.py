@@ -64,7 +64,7 @@ def main():
             if call >= a.warmup:
                 tokens = out.get("usage", {}).get("input_tokens", 0)
                 lines.append(f"{call - a.warmup}\t{at}\t{tokens}\t{len(r['questions'])}\t{ns}")
-    with open(a.out, "w", encoding="utf-8") as f:
+    with open(a.out, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines) + "\n")
     with open(a.out.rsplit(".", 1)[0] + ".answers.jsonl", "w") as f:
         for at in sorted(answers):
