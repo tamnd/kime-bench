@@ -10,8 +10,16 @@ The design is [`spec/13-benchmarks.md`](https://github.com/tamnd/kime/blob/main/
 
 ## Where kime is, today
 
-Nothing measured yet. kime is at M0, which is the engine running Laya's own weights, and the first rows this harness has to produce are W1 and W3 on a T4 against Laya 0.3.7 on the same machine. That is the M0 gate. When it runs, the report goes under `reports/` and the numbers go here, including the ones that miss.
+The first run is in [reports/2026-09-26-w1-w3-4090-m4](reports/2026-09-26-w1-w3-4090-m4/README.md), kime 0.0.25 against Laya 0.3.20 on the same machine.
 
+| Row | Laya | kime | Laya over kime |
+|---|---|---|---|
+| W1 on an RTX 4090, p50 | 35.72 ms | 2.72 ms (f16) | 13.1x |
+| W1 on an RTX 4090, p95 | 36.37 ms | 11.10 ms (f16) | 3.3x, misses 10x on the tail |
+| W3 on an RTX 4090, p50 | 54.24 ms | 55.21 ms (f16) | 0.98x, a tie |
+| W1 on an Apple M4, p50 | 83.44 ms | 103.67 ms (Metal f16) | 0.80x, a loss |
+
+W1 on the 4090 is past 10x at the median and not in the tail. W3 needs the state read once, which the compat family cannot do, and Metal needs the M4 milestone's work. The T4 rows from the specification are not run because there is no T4 here.
 ## What is here
 
 | Path | What it is |
