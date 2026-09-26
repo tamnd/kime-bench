@@ -34,7 +34,7 @@ def main():
     a = p.parse_args()
     if a.threads:
         torch.set_num_threads(a.threads)
-    reqs = [json.loads(line) for line in open(a.requests) if line.strip()]
+    reqs = [json.loads(line) for line in open(a.requests, encoding="utf-8") if line.strip()]
     t = time.perf_counter()
     agent = Agent(a.model, device=a.device, compile=a.compile)
     load_ms = (time.perf_counter() - t) * 1e3
@@ -64,7 +64,7 @@ def main():
             if call >= a.warmup:
                 tokens = out.get("usage", {}).get("input_tokens", 0)
                 lines.append(f"{call - a.warmup}\t{at}\t{tokens}\t{len(r['questions'])}\t{ns}")
-    with open(a.out, "w") as f:
+    with open(a.out, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
     with open(a.out.rsplit(".", 1)[0] + ".answers.jsonl", "w") as f:
         for at in sorted(answers):
