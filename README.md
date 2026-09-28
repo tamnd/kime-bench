@@ -10,13 +10,13 @@ The design is [`spec/13-benchmarks.md`](https://github.com/tamnd/kime/blob/main/
 
 ## Where kime is, today
 
-The latest run is in [reports/2026-09-28-kime-0.0.26-4090](reports/2026-09-28-kime-0.0.26-4090/README.md), kime 0.0.26, against the Laya 0.3.20 numbers from [the first run](reports/2026-09-26-w1-w3-4090-m4/README.md) on the same machine.
+The latest run is in [reports/2026-09-28-kime-0.1.0-4090](reports/2026-09-28-kime-0.1.0-4090/README.md), kime 0.1.0, against the Laya 0.3.20 numbers from [the first run](reports/2026-09-26-w1-w3-4090-m4/README.md) on the same machine.
 
 | Row | Laya | kime | Laya over kime |
 |---|---|---|---|
-| W1 on an RTX 4090, p50 | 35.72 ms | 2.72 ms (f16) | 13.2x |
-| W1 on an RTX 4090, p95 | 36.37 ms | 6.00 ms (f16) | 6.1x, misses 10x on the tail |
-| W3 on an RTX 4090, p50 | 54.24 ms | 43.45 ms (f16) | 1.25x |
+| W1 on an RTX 4090, p50 | 35.72 ms | 2.61 ms (f16) | 13.7x |
+| W1 on an RTX 4090, p95 | 36.37 ms | 5.26 ms (f16) | 6.9x, misses 10x on the tail |
+| W3 on an RTX 4090, p50 | 54.24 ms | 38.15 ms (f16) | 1.42x |
 | W1 on an Apple M4, p50 | 83.44 ms | 103.67 ms (Metal f16, 0.0.25) | 0.80x, a loss |
 
 W1 on the 4090 is past 10x at the median and not in the tail. W3 is ahead but far from 10x. The compat family has to read the state once per question, so the 10x on W3 needs the native model, and Metal needs the M4 milestone's work. The T4 rows from the specification are not run because there is no T4 here.

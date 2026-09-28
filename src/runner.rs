@@ -17,7 +17,7 @@ use serde_json::Value;
 use crate::stats::{Calls, HEADER};
 
 /// The kime release this harness links, the one pinned in Cargo.toml.
-pub const KIME: &str = "0.0.26";
+pub const KIME: &str = "0.1.0";
 
 /// What `kime-bench run` was asked to do.
 #[derive(Debug, Clone)]
