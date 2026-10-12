@@ -155,9 +155,9 @@ checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
 
 [[package]]
 name = "kime"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6a3457bf87addbf9da77408149fc4ae9f1e1c1546e61e3b0314bc8409d7c897"
+checksum = "f31c1ac1ebdbdc92680c8726ad3ce608b32add68487e8aa7f3af389085559700"
 dependencies = [
  "kime-core",
  "kime-engine",
@@ -173,9 +173,9 @@ dependencies = [
 
 [[package]]
 name = "kime-core"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2e91fe1ee832c1ab33545067aa42caff9955861c246bdc47dd50cd8b4c651c5"
+checksum = "78ecff8565d76e30da43a8cacc7421a99f6229d0e0d848e9e8773646a7066c08"
 dependencies = [
  "regex",
  "serde_json",
@@ -183,10 +183,11 @@ dependencies = [
 
 [[package]]
 name = "kime-cpu"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d10feae9ac974ced400cc8bbba343a613acfce9720eaae0735d84e2faa2bfbd0"
+checksum = "81745a54838b7cd2ed926b53f7bfcb7bef9b016d22eb98385f6aeaf4c19b41e6"
 dependencies = [
+ "blake3",
  "kime-model",
  "kime-tensor",
  "libm",
@@ -194,9 +195,9 @@ dependencies = [
 
 [[package]]
 name = "kime-cuda"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e947c1195dccc70b5417a0aa26e8516624dc108d588c37f055b115f95b7065a"
+checksum = "dee66f1d0e39aa21d9974dc7089c2f8c675c233baa715873ed15850a4e7e780b"
 dependencies = [
  "cudarc",
  "kime-model",
@@ -206,9 +207,9 @@ dependencies = [
 
 [[package]]
 name = "kime-engine"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1b0f86f6bea2c0299fe8c5cec89e4bc9f52ed91f942d92b9f51b4b221359f54"
+checksum = "7f1b9267211aa03a6e4eeb758e0c1d28a326611031a5427a8aea42e4afd44da3"
 dependencies = [
  "blake3",
  "kime-core",
@@ -223,9 +224,9 @@ dependencies = [
 
 [[package]]
 name = "kime-metal"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7905c6bd31ec2806d2fbee8fa16cf8603935eb3aea5815242b2ace3897ce3ee3"
+checksum = "506665d6219f3c923ed96e6bec6545d3c4e4d7a96e1d52e56e392d29054c1f27"
 dependencies = [
  "half",
  "kime-model",
@@ -237,9 +238,9 @@ dependencies = [
 
 [[package]]
 name = "kime-model"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b6e1a08e865404b64513fff4257c445aaab5a665c75c8017adea4281d4db3b52"
+checksum = "5a1db0b18544c9352ae1e73e4a3569ac51dfea2e7cc4f3f99bb34cae53ff5d55"
 dependencies = [
  "blake3",
  "kime-core",
@@ -249,9 +250,9 @@ dependencies = [
 
 [[package]]
 name = "kime-tensor"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ab6517b67147b786359ef84587abd8a94c8d21a41708adb30cffb4272bee7f47"
+checksum = "b5e70ce1604c4d67886917ac61c77339c212f0caa54ab374e0c56167b7d15a7a"
 dependencies = [
  "half",
  "memmap2",
@@ -259,9 +260,9 @@ dependencies = [
 
 [[package]]
 name = "kime-tok"
-version = "0.1.0"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc684c6417f70996f6e4c7a09f37e44ed1bfa2d3393d0fd3d1958958f4c889f6"
+checksum = "712a4957241ebff2a0e8de1ca69cfaf67078b7fccdb044fa4035b7fd209602e1"
 dependencies = [
  "serde",
  "serde_json",
